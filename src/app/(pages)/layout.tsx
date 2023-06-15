@@ -1,4 +1,6 @@
+import StyledComponentsRegistry from "@/lib/registry";
 import Navbar from "../components/navbar";
+import "../style/globals.css";
 
 export const metadata = {
   title: "설기로운",
@@ -13,8 +15,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <Navbar />
-        {children}
+        <StyledComponentsRegistry>
+          <Navbar />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
