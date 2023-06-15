@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="ko">
       <body>
         <StyledComponentsRegistry>
-          <Navbar />
+          <Navbar isLoggedIn={false} />
           {children}
         </StyledComponentsRegistry>
       </body>
