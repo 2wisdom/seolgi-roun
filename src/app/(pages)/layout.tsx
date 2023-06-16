@@ -1,5 +1,4 @@
-import StyledComponentsRegistry from "@/lib/registry";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import "../style/globals.css";
 
 export const metadata = {
@@ -15,10 +14,8 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body>
-        <StyledComponentsRegistry>
-          <Navbar isLoggedIn={false} />
-          {children}
-        </StyledComponentsRegistry>
+        <Navbar isLoggedIn={false} />
+        {children}
       </body>
     </html>
   );
