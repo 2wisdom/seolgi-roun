@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import styled from "@emotion/styled";
+import Link from "next/link";
 
 export type ItemType = {
   id: number;
@@ -20,6 +21,16 @@ export type ItemType = {
 
 const Wrapper = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 10px 80px;
+`;
+
+const ItemCardStyle = styled.div`
+  display: flex;
+
+  margin: 30px 0;
 `;
 
 // dummy item list
@@ -50,31 +61,34 @@ const itemList = [
 export default function ItemCard() {
   return (
     <Wrapper>
-      {itemList.map((card) => (
-        <Card sx={{ width: 300, height: 450 }} key={card.id}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="300"
-              image={card.image}
-              alt={card.title}
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                {card.title}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                {card.content}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          <CardActions>
-            <Button size="medium" color="primary">
-              예약하기
-            </Button>
-          </CardActions>
-        </Card>
-      ))}
+      <Link href="/class">수제간식 만들기 예약하기 →</Link>
+      <ItemCardStyle>
+        {itemList.map((card) => (
+          <Card sx={{ width: 300, height: 450, marginRight: 3 }} key={card.id}>
+            <CardActionArea>
+              <CardMedia
+                component="img"
+                height="300"
+                image={card.image}
+                alt={card.title}
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  {card.title}
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {card.content}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+            <CardActions>
+              <Button size="medium" color="primary">
+                예약하기
+              </Button>
+            </CardActions>
+          </Card>
+        ))}
+      </ItemCardStyle>
     </Wrapper>
   );
 }

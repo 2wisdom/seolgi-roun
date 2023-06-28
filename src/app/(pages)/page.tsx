@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <main>
       <Banner />
-      <Link href="/class">수제간식 만들기 예약하기 →</Link>
       <ItemCard />
     </main>
   );
