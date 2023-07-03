@@ -11,6 +11,9 @@ import {
 import React from "react";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { faChevronRight } from "@fortawesome/fontawesome-free-solid";
 
 export type ItemType = {
   id: number;
@@ -29,6 +32,7 @@ const Wrapper = styled.div`
 
 const ItemCardStyle = styled.div`
   display: flex;
+  align-items: center;
 
   margin: 30px 0;
 `;
@@ -73,7 +77,12 @@ export default function ItemCard() {
                 alt={card.title}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography
+                  sx={{ textAlign: "center" }}
+                  gutterBottom
+                  variant="h5"
+                  component="div"
+                >
                   {card.title}
                 </Typography>
                 <Typography variant="body2" color="text.secondary">
@@ -88,6 +97,10 @@ export default function ItemCard() {
             </CardActions>
           </Card>
         ))}
+        <FontAwesomeIcon
+          icon={faChevronRight as IconProp}
+          style={{ width: 40, height: 40 }}
+        />
       </ItemCardStyle>
     </Wrapper>
   );
