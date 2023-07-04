@@ -25,7 +25,7 @@ export type ItemType = {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
 
   padding: 10px 80px;
 `;
@@ -68,7 +68,14 @@ export default function ItemCard() {
       <Link href="/class">수제간식 만들기 예약하기 →</Link>
       <ItemCardStyle>
         {itemList.map((card) => (
-          <Card sx={{ width: 300, height: 450, marginRight: 3 }} key={card.id}>
+          <Card
+            sx={{
+              width: 300,
+              height: 450,
+              marginRight: 3,
+            }}
+            key={card.id}
+          >
             <CardActionArea>
               <CardMedia
                 component="img"
